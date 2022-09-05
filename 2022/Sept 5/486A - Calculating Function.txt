@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+#include <stdlib.h>
+using namespace std;
+
+int main() {
+	
+	long long n,sum = 0,nEven = 0,nOdd = 0;
+
+	cin >> n;
+
+	if(n % 2 == 0) {
+		nEven = n/2;
+		nOdd = n/2;
+	} else {
+		nEven = n/2;
+		nOdd = n/2 + 1;
+	}
+
+	sum = nEven*(nEven + 1) - nOdd*nOdd;
+
+	cout << sum;
+
+	return 0;
+
+}

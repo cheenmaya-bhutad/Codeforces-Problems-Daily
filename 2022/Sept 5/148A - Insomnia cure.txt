@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#include <stdlib.h>
+using namespace std;
+
+int main() {
+	
+	unsigned int k,l,m,n,d,count = 0;
+	cin >> k >> l >> m >> n >> d;
+
+	unsigned int dragons[d] = {0};
+
+	for(int i = 0;i < d;i++)
+		dragons[i] = i + 1;
+
+	for(int i = 0;i < d;i++) {
+		if(dragons[i] != 0 && dragons[i] % k == 0)
+			dragons[i] = 0;
+	}
+
+
+	for(int i = 0;i < d;i++) {
+		if(dragons[i] != 0 && dragons[i] % l == 0)
+			dragons[i] = 0;
+	}
+
+	for(int i = 0;i < d;i++) {
+		if(dragons[i] != 0 && dragons[i] % m == 0)
+			dragons[i] = 0;
+	}
+
+	for(int i = 0;i < d;i++) {
+		if(dragons[i] != 0 && dragons[i] % n == 0)
+			dragons[i] = 0;
+	}
+
+
+	for(int i = 0;i < d;i++) {
+		if(dragons[i] != 0)
+			count++;
+	}
+	
+	cout << d - count;
+
+	return 0;
+}

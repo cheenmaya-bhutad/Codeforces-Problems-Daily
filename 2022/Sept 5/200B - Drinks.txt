@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#include <stdlib.h>
+using namespace std;
+
+int main() {
+	
+	unsigned int n;
+	cin >> n;
+
+	double sum = 0;
+	double percentages[n];
+
+	for(int i = 0;i < n;i++)
+		cin >> percentages[i];
+
+	for(int i = 0;i < n;i++)
+		sum += percentages[i]/100;
+
+	cout << (sum/n)*100;
+
+	return 0;
+}
