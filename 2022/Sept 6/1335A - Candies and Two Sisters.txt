@@ -1,0 +1,23 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+
+        int t,n;
+
+        t = sc.nextInt();
+        while(t-- > 0) {
+            n = sc.nextInt();
+            if(n%2 == 0) {
+                System.out.println(n/2 - 1);
+            } else {
+                System.out.println(n/2);
+            }
+        }
+
+    }
+}

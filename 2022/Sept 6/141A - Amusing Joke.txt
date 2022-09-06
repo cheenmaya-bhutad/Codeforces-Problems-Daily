@@ -1,0 +1,32 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String str1,str2,str3,temp = "";
+        str1 = br.readLine().trim();
+        str2 = br.readLine().trim();
+        str3 = br.readLine().trim();
+
+        temp = str1 + str2;
+
+        char[] arr1 = temp.toCharArray();
+        char[] arr2 = str3.toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        str1 = new String(arr1);
+        str3 = new String(arr2);
+
+        if(str1.equals(str3))
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+
+    }
+}

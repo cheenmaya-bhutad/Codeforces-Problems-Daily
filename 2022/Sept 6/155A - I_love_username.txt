@@ -1,0 +1,43 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+
+        int n,count = 0,max, min;
+        n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        for(int i = 0;i < n;i++)
+            arr[i] = sc.nextInt();
+
+        for(int i = 0;i < n-1;i++) {
+            for(int j = i+1;j < n;j++) {
+                if(arr[i] == arr[j])
+                    arr[j] = -1;
+            }
+        }
+
+        for(int i = 1;i < n;i++) {
+            if(arr[i] == -1)
+                continue;
+            max = arr[i];
+            min = arr[i];
+            for(int j = 0;j < i;j++) {
+                if(arr[j] != -1 && arr[j] > max)
+                    max = arr[j];
+                if(arr[j] != -1 && arr[j] < min)
+                    min = arr[j];
+            }
+            if(max == arr[i] || min == arr[i])
+                count++;
+        }
+
+        System.out.println(count);
+    }
+
+}

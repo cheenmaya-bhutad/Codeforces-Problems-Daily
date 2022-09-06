@@ -1,0 +1,23 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+
+        int n,k;
+
+        n = sc.nextInt();
+        k = sc.nextInt();
+
+        for(int i = n;i >= 0;i--) {
+            if(5*(i*(i+1))/2 + k <= 240) {
+                System.out.println(i);
+                break;
+            }
+        }
+    }
+
+}

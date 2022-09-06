@@ -1,0 +1,31 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int n,m,pos = 0;
+
+        n = sc.nextInt();
+        m = sc.nextInt();
+
+        for(int i = 0;i < n;i++) {
+            for(int j = 0;j < m;j++) {
+                if(i % 2 == 0)
+                    System.out.print("#");
+                else {
+                    if(j == pos) {
+                        System.out.print("#");
+                    } else {
+                        System.out.print(".");
+                    }
+                }
+            }
+            if(i % 2 == 0)
+                pos = m - 1 - pos;
+            System.out.print("\n");
+        }
+    }
+}
