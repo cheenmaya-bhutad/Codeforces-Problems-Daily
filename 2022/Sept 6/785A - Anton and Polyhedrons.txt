@@ -1,0 +1,36 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int count = 0;
+        String str;
+
+        for(int i = 0;i < n;i++) {
+            str = br.readLine();
+            switch(str) {
+                case "Tetrahedron":
+                    count += 4;
+                    break;
+                case "Cube":
+                    count += 6;
+                    break;
+                case "Octahedron":
+                    count += 8;
+                    break;
+                case "Dodecahedron":
+                    count += 12;
+                    break;
+                case "Icosahedron":
+                    count += 20;
+                    break;
+            }
+        }
+
+        System.out.println(count);
+    }
+}
