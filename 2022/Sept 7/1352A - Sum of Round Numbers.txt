@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+void sumEnds(int n) {
+    int count = 0,numCount = 0,temp,place = 1;
+
+    temp = n;
+
+    while(temp != 0) {
+        if(temp % 10 != 0)
+            count++;
+        numCount++;
+        temp = temp / 10;
+    }
+
+    cout << count << "\n";
+
+    while(n != 0) {
+        if(n % 10 != 0) {
+            cout << place * (n%10) << " ";
+        }
+        n = n/10;
+        place = place * 10;
+    }
+}
+
+int main()
+{
+    int t,n;
+
+    cin >> t;
+
+    while(t-- > 0) {
+        cin >> n;
+        sumEnds(n);
+    }
+
+    return 0;
+}

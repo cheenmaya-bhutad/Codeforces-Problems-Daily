@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main(void) {
+
+    int x1,x2,x3,max = -1,min = 101,sum,temp;
+    cin >> x1 >> x2 >> x3;
+    sum = x1 + x2 + x3;
+
+    max = (x1 > x2) ? x1 : x2;
+    max = (max > x3) ? max : x3;
+
+    min = (x1 < x2) ? x1 : x2;
+    min = (min < x3) ? min : x3;
+
+    for(int i = min;i <= max;i++) {
+        temp = 0;
+        if(i - x1 <= 0)
+            temp += (x1 - i);
+        else
+            temp += (i - x1);
+
+        if(i - x2 <= 0)
+            temp += (x2 - i);
+        else
+            temp += (i - x2);
+
+        if(i - x3 <= 0)
+            temp += (x3 - i);
+        else
+            temp += (i - x3);
+
+        if(sum > temp)
+            sum = temp;
+
+    }
+
+    cout << sum;
+
+    return 0;
+}

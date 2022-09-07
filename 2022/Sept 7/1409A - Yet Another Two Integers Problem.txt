@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(void) {
+
+    int t,a,b;
+    cin >> t;
+
+    while(t-- > 0) {
+        cin >> a >> b;
+        if(a > b && (a - b) % 10 == 0) {
+            cout << (((a - b) - ((a - b) % 10)) / 10) << endl;
+        } else if(a > b && (a - b) % 10 != 0) {
+            cout << (1 + ((a - b) - ((a - b) % 10)) / 10) << endl;
+        } else if(b > a && (b - a) % 10 == 0) {
+            cout << (((b - a) - ((b - a) % 10)) / 10) << endl;
+        } else if(b > a && (b - a) % 10 != 0) {
+            cout << (1 + ((b - a) - ((b - a) % 10)) / 10) << endl;
+        } else {
+            cout << "0" << endl;
+        }
+    }
+
+    return 0;
+}
