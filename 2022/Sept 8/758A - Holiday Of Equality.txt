@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+	int n,max = -1,count = 0;
+	cin >> n;
+
+	int welfare[n];
+
+	for(int i = 0;i < n;i++) {
+		cin >> welfare[i];
+		if(welfare[i] > max)
+			max = welfare[i];
+	}
+
+	for(int i = 0;i < n;i++) {
+		if(welfare[i] < max)
+			count = count + max - welfare[i];
+	}
+
+	cout << count;
+	
+	return 0;
+}
