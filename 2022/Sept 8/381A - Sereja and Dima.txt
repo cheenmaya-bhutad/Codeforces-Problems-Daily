@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+	
+	int n,ptr1 = 0,ptr2,sum1 = 0,sum2 = 0,turn = 1;
+
+	cin >> n;
+
+	ptr2 = n - 1;
+	int cards[n];
+
+	for(int i = 0;i < n;i++)
+		cin >> cards[i];
+
+	while(ptr1 <= ptr2) { 
+		if(turn == 1) {
+			if(cards[ptr1] > cards[ptr2]) {
+				sum1 += cards[ptr1];
+				cards[ptr1] = 0;
+				ptr1++;
+			} else {
+				sum1 += cards[ptr2];
+				cards[ptr2] = 0;
+				ptr2--;
+			}
+			turn--;
+		} else {
+			if(cards[ptr1] > cards[ptr2]) {
+				sum2 += cards[ptr1];
+				cards[ptr1] = 0;
+				ptr1++;
+			} else {
+				sum2 += cards[ptr2];
+				cards[ptr2] = 0;
+				ptr2--;
+			}
+			turn++;	
+		}
+	}
+
+	if(turn == 1)
+		sum1 += cards[ptr1];
+	else
+		sum2 += cards[ptr1];
+
+	cout << sum1 << " " << sum2;
+
+
+	return 0;
+}
