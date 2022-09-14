@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+	
+	int t,n,result,count;
+
+	cin >> t;
+	while(t-- > 0) {
+		cin >> n;
+		result = 0;
+		count = 0;
+		
+		result = 10*(n%10 - 1);
+
+		while(n != 0) {
+			count ++;
+			n /= 10;
+		}
+
+		result += (count*(count+1))/2;
+
+		cout << result << endl;
+
+	}
+	return 0;
+}

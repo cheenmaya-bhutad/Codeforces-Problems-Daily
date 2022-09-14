@@ -1,0 +1,54 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int t,n,minA,minB;
+        long result;
+
+        t = sc.nextInt();
+
+        while(t-- > 0) {
+            minA = 1000000001;
+            minB = 1000000001;
+            result = 0;
+
+            n = sc.nextInt();
+
+            int[] a = new int[n];
+            int[] b = new int[n];
+
+            for(int i = 0;i < n;i++) {
+                a[i] = sc.nextInt();
+                if(minA > a[i])
+                    minA = a[i];
+            }
+
+            for(int i = 0;i < n;i++) {
+                b[i] = sc.nextInt();
+                if(minB > b[i])
+                    minB = b[i];
+            }
+
+            for(int i = 0;i < n;i++) {
+                if(a[i] != minA && b[i] != minB) {
+                    if(a[i] - minA > b[i] - minB) {
+                        result = result + a[i] - minA;
+                    } else if(b[i] - minB > a[i] - minA) {
+                        result = result + b[i] - minB;
+                    } else {
+                        result = result + a[i] - minA;
+                    }
+                } else if(a[i] == minA && b[i] != minB) {
+                    result = result + b[i] - minB;
+                } else if(a[i] != minA && b[i] == minB)
+                    result = result + a[i] - minA;
+            }
+
+            System.out.println(result);
+        }
+    }
+}

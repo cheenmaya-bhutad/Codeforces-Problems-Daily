@@ -1,0 +1,45 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Test {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t,n;
+        String str;
+        Boolean flag;
+
+        t = Integer.parseInt(br.readLine());
+
+        while(t-- > 0) {
+            flag = false;
+            n = Integer.parseInt(br.readLine());
+            str = br.readLine().trim();
+
+            for(int i = 0;i < n-1;i++) {
+                if(str.charAt(i) != str.charAt(i+1)) {
+                    if (check(str, i, n)) {
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+
+            if(flag)
+                System.out.println("NO");
+            else
+                System.out.println("YES");
+        }
+
+    }
+
+    public static boolean check(String str,int pos,int length) {
+        for(int i = pos+1;i < length;i++) {
+            if(str.charAt(i) == str.charAt(pos))
+                return true;
+        }
+
+        return false;
+    }
+}
