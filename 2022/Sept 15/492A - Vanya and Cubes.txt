@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n,sum = 1,i = 2;
+        n = sc.nextInt();
+
+        if(n == 1) {
+            System.out.println(1);
+            return;
+        }
+
+        while(sum <= n) {
+            sum = sum +  (i*(i+1))/2;
+            i++;
+        }
+
+        System.out.println(i-2);
+    }
+}

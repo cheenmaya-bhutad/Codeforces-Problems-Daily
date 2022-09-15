@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t,max1,min1,max2,min2;
+        int[] skills = new int[4];
+
+        t = sc.nextInt();
+        while(t-- > 0) {
+            max1 = -1;
+            max2 = -1;
+            for(int i = 0;i < 4;i++) {
+                skills[i] = sc.nextInt();
+            }
+
+            max1 = (skills[0] > skills[1]) ? skills[0] : skills[1];
+            min1 = (skills[0] > skills[1]) ? skills[1] : skills[0];
+
+            max2 = (skills[2] > skills[3]) ? skills[2] : skills[3];
+            min2 = (skills[2] > skills[3]) ? skills[3] : skills[2];
+
+            if(max1 < min2 || max2 < min1)
+                System.out.println("NO");
+            else
+                System.out.println("YES");
+
+
+        }
+    }
+
+
+}
